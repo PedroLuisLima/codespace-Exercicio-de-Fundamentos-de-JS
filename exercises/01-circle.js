@@ -1,3 +1,4 @@
-import circleArea from "./libs/math.js";
+import mathfunctions from "./libs/math.js";
 
-circleArea(10)
+mathfunctions.circleArea(10)
+mathfunctions.circleArea(100)

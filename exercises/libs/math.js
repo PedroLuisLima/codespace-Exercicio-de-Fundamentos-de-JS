@@ -23,23 +23,35 @@ function calculator(num1, num2, operation){
             let multiplication = num1*num2
             console.log('Multiplication: ', multiplication)
             break;
+        default:
+            console.log('Operação invalida')
     }
 }
 
 function isTriangle(l1,l2,l3){
-    if (l1 !== 0 || l2 !== 0 || l3 !== 0){
+    if ((l1<=0) || (l2<=0) || (l3<=0)){
         return false
     }
     else{
-        return true
+        if ((l1+l2 > l3) && (l2+l3 > l1) && (l3+l1> l2)){
+            return true
+        }
+        else{
+            return false
+        }
     }
 }
 
-function triangle(isTriangle, l1, l2, l3){
-    if (isTriangle(l1, l2, l3) === false) return 'Not valid.'
-    
-    
+function triangle(l1, l2, l3){
+    if (isTriangle(l1, l2, l3) === false) return console.log('Not valid.');
+
+    if ((l1 === l2) && (l2 === l3)) return console.log('Equilatero');
+
+    if ((l1 === l2) || (l2===l3) || (l3 === l1)) return console.log('Isoceles');    
+
+    return console.log('Escaleno');
 }
 
-export default {calculator, triangle};
-export {calculator, triangle}
+export default {calculator, triangle, circleArea};
+
+// export {calculator, triangle, circleArea} segunda maneira.
